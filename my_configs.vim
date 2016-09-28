@@ -56,7 +56,7 @@ let g:neocomplcache_auto_completion_start_length=1
 let g:neocomplcache_min_keyword_length=2
 
 " AutoComplPop like behavior that auto selects the predicted (autocompleted) word - For example if there is only a single predicted word left, you dont need to press the down arrow key before pressing enter, it automatically selects it - Note that this is not the default behaviour in the neocomplcache plugin
-let g:neocomplcache_enable_auto_select = 1
+let g:neocomplcache_enable_auto_select=1
 
 " Enable tab completion for neocomplcache - Similar functionality to the one offered by the Supertab plugin - Note that this breaks the tab key autocomplete functionality for the snipMate plugin
 "inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -69,9 +69,9 @@ map <leader><left> gT
 map <leader><right> gt
 
 " For better session management
-" Don't save options (Need to do this to avoid syntax highlighting problems/issues with vim sessions - syntax highlight doesn't work when loading a session if this setting is not set)
-nmap <leader>ms :mksession! ./.session.vim<CR>
-nmap <leader>ls :so ./.session.vim<CR>
+" Don't save options (Need to do this to avoid syntax highlighting problems/issues with vim sessions - syntax highlight doesn't work when loading a session if this setting is not set) - Also need to manually handle the NERDTree window as it doesn't play well with vim sessions - Use | to insert inline comments
+nmap <silent> <leader>ms :NERDTreeClose<CR>\|:mksession! ./.session.vim<CR>\|:NERDTree<CR>|    " Close NERDTree window, create session, (re)load NERDTree window 
+nmap <silent> <leader>ls :so ./.session.vim<CR>\|:NERDTree<CR>|    " Load NERDTree window after loading the session
 set sessionoptions-=options
 
 " To be able to save/write (to) read-only files easily (To use this command, type :Sudow) - Note that all custom commands need to start with an uppercase letter
@@ -81,13 +81,19 @@ command! Sudow w !sudo tee % >/dev/null
 
 " Smarter buffer access (Uses the vim-airline plugin)
 " Also note that the default plugin is the lightline.vim plugin which is overridden by the vim-airline plugin (Use vim-airline instead as it has more features)
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled=1
 " Just show the file name (Instead of the full path)
-let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#fnamemod=':t'
 
 " Always open NERDTree vertical split on the left
-let g:NERDTreeWinPos = "left"
+let g:NERDTreeWinPos="left"
   
 " Smarter status bar with (horizontal) list of (listed) buffers
-let g:bufferline_echo = 0   " Don't echo on the command bar
-"let g:airline#extensions#bufferline#enabled = 0    " Bufferline is enabled for the airline plugin by default (Uncomment to disable)
+let g:bufferline_echo=0|   " Don't echo on the command bar
+"let g:airline#extensions#bufferline#enabled = 0|   " Bufferline is enabled for the airline plugin by default (Uncomment to disable)
+
+" Don't automatically break lines when characters in a line go over a set limit (Setting textwidth to 0 disables this)
+set textwidth=0
+
+" Change default spell check language to use British English (en_gb) - Note that the default spell check language is American English
+set spelllang=en_gb
