@@ -76,7 +76,7 @@ set sessionoptions-=options
 
 " To be able to save/write (to) read-only files easily (To use this command, type :Sudow) - Note that all custom commands need to start with an uppercase letter
 " Also note that % refers to the current file/buffer and >/dev/null re-directs the output from tee
-" Exclamation mark is used after command to prevent issues/errors when reloading a .vimrc file
+" Exclamation mark is used after command to prevent issues/errors when reloading a .vimrc file (It is used to redefine an already existing command)
 command! Sudow w !sudo tee % >/dev/null
 
 " Smarter buffer access (Uses the vim-airline plugin)
@@ -90,6 +90,7 @@ let g:NERDTreeWinPos="left"
   
 " Smarter status bar with (horizontal) list of (listed) buffers
 let g:bufferline_echo=0|   " Don't echo on the command bar
+let g:bufferline_show_bufnr=0|    " Don't display buffer numbers
 "let g:airline#extensions#bufferline#enabled = 0|   " Bufferline is enabled for the airline plugin by default (Uncomment to disable)
 
 " Don't automatically break lines when characters in a line go over a set limit (Setting textwidth to 0 disables this)
@@ -97,3 +98,7 @@ set textwidth=0
 
 " Change default spell check language to use British English (en_gb) - Note that the default spell check language is American English
 set spelllang=en_gb
+
+" Set autochdir option to automatically change directory to which the currently opened file/buffer belongs - Using autocmd instead as autochdir breaks functionality with the bufferline plugin
+"set autochdir
+autocmd BufEnter * silent! :lcd %:p:h
