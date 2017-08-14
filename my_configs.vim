@@ -93,8 +93,9 @@ let g:bufferline_echo=0|   " Don't echo on the command bar
 let g:bufferline_show_bufnr=0|    " Don't display buffer numbers
 "let g:airline#extensions#bufferline#enabled = 0|   " Bufferline is enabled for the airline plugin by default (Uncomment to disable)
 
-" Don't automatically break lines when characters in a line go over a set limit (Setting textwidth to 0 disables this)
-set textwidth=0
+" Don't automatically break lines when characters in a line go over a set limit (Setting textwidth to 0 disables this) - Setting it to 80 instead to make it earier to navigate through files
+"set textwidth=0
+set textwidth=80
 
 " Change default spell check language to use British English (en_gb) - Note that the default spell check language is American English
 set spelllang=en_gb
