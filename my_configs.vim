@@ -8,36 +8,41 @@ set number
 " Set default indentaion to 2 (instead of 4)
 set shiftwidth=2
 
-" Set all indentations to be spaces rather than tabs and use 2 spaces (instead of 4)
+" Set all indentations to be spaces rather than tabs and use 2 spaces (instead
+" of 4)
 set expandtab
 set tabstop=2
 
-" To toggle paste and nopaste (Vim's autoindentation/formatting feature when pasting text)
+" To toggle paste and nopaste (Vim's autoindentation/formatting feature when
+" pasting text)
 set pastetoggle=<F2>
 
 " Show commands as they are typed (Shown at the bottom right of the screen)
 set showcmd
 
-" Enable omni completion (Used in conjunction with the SuperTab plugin)
-" SuperTab plugin maps <Tab> to <C-X><C-O> and adds some other functionality making it easier to use
+" Enable omni completion (Used in conjunction with the SuperTab plugin) SuperTab
+" plugin maps <Tab> to <C-X><C-O> and adds some other functionality making it
+" easier to use
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 "let g:SuperTabDefaultCompletionType="<C-X><C-O>"
 
-" Enable defualt completion to start at top of list (instead of at the bottom of the list) and set supertab default type
-" to context to let it decide whether to use omni completion or not
+" Enable defualt completion to start at top of list (instead of at the bottom of
+" the list) and set supertab default type to context to let it decide whether to
+" use omni completion or not
 "let g:SuperTabContextDefaultCompletionType="<c-n>"
 "let g:SuperTabDefaultCompletionType="context"
 
-" Re-map keys to insert a new line (above or below cursor) in normal mode without switching to insert mode (such as when using o or O)
-" Note that for some reason <S-Enter> doesn't seem to work correctly
+" Re-map keys to insert a new line (above or below cursor) in normal mode
+" without switching to insert mode (such as when using o or O) Note that for
+" some reason <S-Enter> doesn't seem to work correctly
 "nmap <S-Enter> O<ESC>
 "nmap <Enter> o<ESC>
 nmap <F7> O<ESC>
 nmap <F9> o<ESC>
 
-" multi_cursor
-" Default mapping - Since the custom modification of <C-s> in the original config file doesn't work
+" multi_cursor Default mapping - Since the custom modification of <C-s> in the
+" original config file doesn't work
 let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
