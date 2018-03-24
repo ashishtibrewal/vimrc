@@ -103,3 +103,6 @@ set spelllang=en_gb
 " Set autochdir option to automatically change directory to which the currently opened file/buffer belongs - Using autocmd instead as autochdir breaks functionality with the bufferline plugin
 "set autochdir
 autocmd BufEnter * silent! :lcd %:p:h
+
+" Change mapping for Y to yank from cursor until the end of the line
+map Y y$
