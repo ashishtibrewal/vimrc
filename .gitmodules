@@ -1,0 +1,35 @@
+[submodule "auto-pairs"]
+	path = sources_non_forked/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs
+
+[submodule "gruvbox"]
+	path = sources_non_forked/gruvbox
+	url = https://github.com/morhetz/gruvbox
+
+[submodule "neocomplcache"]
+	path = sources_non_forked/neocomplcache
+	url = https://github.com/Shougo/neocomplcache.vim
+
+[submodule "tagbar"]
+	path = sources_non_forked/tagbar
+	url = https://github.com/majutsushi/tagbar
+
+[submodule "vim-airline"]
+	path = sources_non_forked/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+
+[submodule "vim-bufferline"]
+	path = sources_non_forked/vim-bufferline
+	url = https://github.com/bling/vim-bufferline
+
+[submodule "vim-colorschemes"]
+	path = sources_non_forked/vim-colorschemes
+	url = https://github.com/flazz/vim-colorschemes
+
+[submodule "vim-gitgutter"]
+	path = sources_non_forked/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter
+
+[submodule "vim-unimpaired"]
+	path = sources_non_forked/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired
