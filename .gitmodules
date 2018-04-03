@@ -33,3 +33,7 @@
 [submodule "vim-unimpaired"]
 	path = sources_non_forked/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired
+
+[submodule "jedi"]
+	path = sources_non_forked/jedi
+	url = https://github.com/davidhalter/jedi
