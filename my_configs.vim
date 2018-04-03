@@ -141,3 +141,7 @@ map Y y$
 " is. Note: Run ctags recursively (with the -R flag) on the project's root
 " folder so that it covers all files for the project
 set tags=./tags,./TAGS,tags;~,TAGS;~
+
+" Need to call this function as yankstack key bindings mess with the 'S' keymap
+" from the vim-surround plugin
+call yankstack#setup()
