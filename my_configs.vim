@@ -115,7 +115,8 @@ let g:NERDTreeWinPos="left"
 " Smarter status bar with (horizontal) list of (listed) buffers
 let g:bufferline_echo=0|   " Don't echo on the command bar
 let g:bufferline_show_bufnr=0|    " Don't display buffer numbers
-"let g:airline#extensions#bufferline#enabled = 0|   " Bufferline is enabled for the airline plugin by default (Uncomment to disable)
+"let g:airline#extensions#bufferline#enabled = 0|   " Bufferline is enabled for
+"the airline plugin by default (Uncomment to disable)
 
 " Don't automatically break lines when characters in a line go over a set limit
 " (Setting textwidth to 0 disables this) - Setting it to 80 instead to make it
@@ -123,7 +124,8 @@ let g:bufferline_show_bufnr=0|    " Don't display buffer numbers
 "set textwidth=0
 set textwidth=80
 
-" Change default spell check language to use British English (en_gb) - Note that the default spell check language is American English
+" Change default spell check language to use British English (en_gb) - Note that
+" the default spell check language is American English
 set spelllang=en_gb
 
 " Set autochdir option to automatically change directory to which the currently
@@ -142,6 +144,17 @@ map Y y$
 " folder so that it covers all files for the project
 set tags=./tags,./TAGS,tags;~,TAGS;~
 
-" Need to call this function as yankstack key bindings mess with the 'S' keymap
-" from the vim-surround plugin
+" Need to call this function as yankstack key bindings clashes with the 'S'
+" keymap from the vim-surround plugin
 call yankstack#setup()
+
+" Disable smartindent as it is a deprecated option. It's replacement is cindent.
+" Also note that smartindent messes with indentation of comments in Python files.
+set nosi
+set cindent
+set cinkeys-=0#
+set indentkeys-=0#
+
+" Update formatoptions to include the 'j' flag. It is useful when joining
+" commented lines using the J keymap
+set formatoptions+=j
