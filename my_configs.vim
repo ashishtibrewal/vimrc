@@ -158,3 +158,7 @@ set indentkeys-=0#
 " Update formatoptions to include the 'j' flag. It is useful when joining
 " commented lines using the J keymap
 set formatoptions+=j
+
+" Include alpha in the nrformat option for CTRL-A and CTRL-X to work with an
+" alphabetic index/list
+set nrformats+=alpha
