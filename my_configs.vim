@@ -162,3 +162,7 @@ set formatoptions+=j
 " Include alpha in the nrformat option for CTRL-A and CTRL-X to work with an
 " alphabetic index/list
 set nrformats+=alpha
+
+" Set swapfile option to create swap files for files opened (and being edited)
+" in vim
+set swapfile
