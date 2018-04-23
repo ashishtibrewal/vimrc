@@ -156,8 +156,10 @@ set cinkeys-=0#
 set indentkeys-=0#
 
 " Update formatoptions to include the 'j' flag. It is useful when joining
-" commented lines using the J keymap
+" commented lines using the J keymap. Also remove t to prevent auto-wrap text
+" using textwidth
 set formatoptions+=j
+set formatoptions-=t
 
 " Include alpha in the nrformat option for CTRL-A and CTRL-X to work with an
 " alphabetic index/list
