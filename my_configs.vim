@@ -156,8 +156,8 @@ set cinkeys-=0#
 set indentkeys-=0#
 
 " Update formatoptions to include the 'j' flag. It is useful when joining
-" commented lines using the J keymap. Also remove t to prevent auto-wrap text
-" using textwidth
+" commented lines using the J keymap. Also remove t to prevent auto-wrapping
+" text using textwidth
 set formatoptions+=j
 set formatoptions-=t
 
