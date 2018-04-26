@@ -168,3 +168,21 @@ set nrformats+=alpha
 " Set swapfile option to create swap files for files opened (and being edited)
 " in vim
 set swapfile
+
+" These work like * and g*, but do not move the cursor and always set hls.
+" Refer to: https://superuser.com/questions/255024/highlighting-a-search-term-without-moving-the-cursor
+" Note <C-M> is equivalent to <CR> (i.e. a carriage return)
+map <Leader>* :let @/ = '\<'.expand('<cword>').'\>'\|set hlsearch<C-M>
+map <Leader>g* :let @/ = expand('<cword>')\|set hlsearch<C-M>
+
+" Yank visual selection without moving cursor back to start of visual selection
+vmap y ygv<Esc>
+
+" Show buffer numbers next to buffer names on the buffer list status line on the
+" top portion of the screen
+let g:airline#extensions#tabline#buffer_nr_show = 1
+
+" Set cscope to use relative paths. This is particularly useful for projects
+" where code is split into multiple subdirectories and vim's current directory
+" is changed dynamically with the location of the current buffer
+set csre
