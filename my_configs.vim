@@ -184,5 +184,11 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " Set cscope to use relative paths. This is particularly useful for projects
 " where code is split into multiple subdirectories and vim's current directory
-" is changed dynamically with the location of the current buffer
+" is changed dynamically with the location of the current buffer. Set option to
+" use quickfix list when using cscope
 set csre
+set cscopequickfix=s-,c-,d-,i-,t-,e-
+
+" Remove the newtab value from the switchbuf option (Useful when using the
+" quickfix list as it opens new/existing bufferes in the current tab)
+set switchbuf-=newtab
