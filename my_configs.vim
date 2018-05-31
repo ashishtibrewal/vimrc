@@ -35,11 +35,12 @@ set omnifunc=syntaxcomplete#Complete
 
 " Re-map keys to insert a new line (above or below cursor) in normal mode
 " without switching to insert mode (such as when using o or O) Note that for
-" some reason <S-Enter> doesn't seem to work correctly
+" some reason <S-Enter> doesn't seem to work correctly. Disabling this mapping
+" as it is provided by the vim-unimpaired plugin
 "nmap <S-Enter> O<ESC>
 "nmap <Enter> o<ESC>
-nmap <F7> O<ESC>
-nmap <F9> o<ESC>
+" nmap <F7> O<ESC>
+" nmap <F9> o<ESC>
 
 " multi_cursor Default mapping - Since the custom modification of <C-s> in the
 " original config file doesn't work
@@ -192,3 +193,20 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-
 " Remove the newtab value from the switchbuf option (Useful when using the
 " quickfix list as it opens new/existing bufferes in the current tab)
 set switchbuf-=newtab
+
+" Functionality for searching using / and ? in visual selection
+" Refer to http://vim.wikia.com/wiki/Search_only_over_a_visual_range for more information
+function! RangeSearch(direction)
+  call inputsave()
+  let g:srchstr = input(a:direction)
+  call inputrestore()
+  if strlen(g:srchstr) > 0
+    let g:srchstr = g:srchstr.
+          \ '\%>'.(line("'<")-1).'l'.
+          \ '\%<'.(line("'>")+1).'l'
+  else
+    let g:srchstr = ''
+  endif
+endfunction
+vnoremap <silent> / :<C-U>call RangeSearch('/')<CR>:if strlen(g:srchstr) > 0\|exec '/'.g:srchstr\|endif<CR>
+vnoremap <silent> ? :<C-U>call RangeSearch('?')<CR>:if strlen(g:srchstr) > 0\|exec '?'.g:srchstr\|endif<CR>
