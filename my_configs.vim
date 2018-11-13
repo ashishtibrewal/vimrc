@@ -213,3 +213,7 @@ vnoremap <silent> ? :<C-U>call RangeSearch('?')<CR>:if strlen(g:srchstr) > 0\|ex
 
 " Adds flexibility to visual block mode
 virtualedit=block
+
+" Add functionality for removing trailing whitespaces
+
+" Add Syntastic switch for python2 and python3
