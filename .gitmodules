@@ -6,10 +6,6 @@
 	path = sources_non_forked/gruvbox
 	url = https://github.com/morhetz/gruvbox
 
-[submodule "neocomplcache"]
-	path = sources_non_forked/neocomplcache
-	url = https://github.com/Shougo/neocomplcache.vim
-
 [submodule "tagbar"]
 	path = sources_non_forked/tagbar
 	url = https://github.com/majutsushi/tagbar
@@ -34,10 +30,6 @@
 	path = sources_non_forked/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired
 
-[submodule "jedi-vim"]
-	path = sources_non_forked/jedi-vim
-	url = https://github.com/davidhalter/jedi-vim
-
 [submodule "vim-snippets"]
   path = sources_non_forked/vim-snippets
   url = https://github.com/honza/vim-snippets
@@ -45,3 +37,11 @@
 [submodule "ultisnips"]
   path = sources_non_forked/ultisnips
   url = https://github.com/sirver/UltiSnips
+
+[submodule "YouCompleteMe"]
+  path = sources_non_forked/YouCompleteMe
+  url = https://github.com/valloric/YouCompleteMe
+
+[submodule "supertab"]
+  path = sources_non_forked/supertab
+  url = https://github.com/ervandew/supertab

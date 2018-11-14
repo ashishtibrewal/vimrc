@@ -54,22 +54,22 @@ let g:multi_cursor_start_word_key='g<C-n>'
 " Enable neocomplcache (More powerful than the AutoComplPop) Note that
 " YouCompleteMe is more powerful than both plugins but couldn't manage to get it
 " to work with the installed version of Vim - it requires a more recent version
-let g:neocomplcache_enable_at_startup=1
+" let g:neocomplcache_enable_at_startup=1
 
 " Set neocomplcache autocompletion start length to 1 (Default setting by the
 " plugin is 2)
-let g:neocomplcache_auto_completion_start_length=1
+" let g:neocomplcache_auto_completion_start_length=1
 
 " Set neocomplcache min-keyword-length autocompletion to 2 (Default setting by
 " the plugin is 4) - Note that no keyword is shorter than 2 alphabets
-let g:neocomplcache_min_keyword_length=2
+" let g:neocomplcache_min_keyword_length=2
 
 " AutoComplPop like behavior that auto selects the predicted (autocompleted)
 " word - For example if there is only a single predicted word left, you dont
 " need to press the down arrow key before pressing enter, it automatically
 " selects it - Note that this is not the default behaviour in the neocomplcache
 " plugin
-let g:neocomplcache_enable_auto_select=1
+" let g:neocomplcache_enable_auto_select=1
 
 " Enable tab completion for neocomplcache - Similar functionality to the one
 " offered by the Supertab plugin - Note that this breaks the tab key
@@ -212,7 +212,19 @@ vnoremap <silent> / :<C-U>call RangeSearch('/')<CR>:if strlen(g:srchstr) > 0\|ex
 vnoremap <silent> ? :<C-U>call RangeSearch('?')<CR>:if strlen(g:srchstr) > 0\|exec '?'.g:srchstr\|endif<CR>
 
 " Adds flexibility to visual block mode
-virtualedit=block
+set virtualedit=block
+
+" To make YCM work with UtilSnips (and vim-snippets)
+" Refer to https://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme
+" Make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion=['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType='<C-n>'
+
+" Better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " Add functionality for removing trailing whitespaces
 
