@@ -1,47 +1,36 @@
-[submodule "auto-pairs"]
+[submodule "sources_non_forked/auto-pairs"]
 	path = sources_non_forked/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs
-
-[submodule "gruvbox"]
+[submodule "sources_non_forked/gruvbox"]
 	path = sources_non_forked/gruvbox
 	url = https://github.com/morhetz/gruvbox
-
-[submodule "tagbar"]
+[submodule "sources_non_forked/tagbar"]
 	path = sources_non_forked/tagbar
 	url = https://github.com/majutsushi/tagbar
-
-[submodule "vim-airline"]
+[submodule "sources_non_forked/vim-airline"]
 	path = sources_non_forked/vim-airline
 	url = https://github.com/vim-airline/vim-airline
-
-[submodule "vim-bufferline"]
+[submodule "sources_non_forked/vim-bufferline"]
 	path = sources_non_forked/vim-bufferline
 	url = https://github.com/bling/vim-bufferline
-
-[submodule "vim-colorschemes"]
-	path = sources_non_forked/vim-colorschemes
-	url = https://github.com/flazz/vim-colorschemes
-
-[submodule "vim-gitgutter"]
+[submodule "sources_non_forked/vim-gitgutter"]
 	path = sources_non_forked/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
-
-[submodule "vim-unimpaired"]
+[submodule "sources_non_forked/vim-unimpaired"]
 	path = sources_non_forked/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired
-
-[submodule "vim-snippets"]
-  path = sources_non_forked/vim-snippets
-  url = https://github.com/honza/vim-snippets
-
-[submodule "ultisnips"]
+[submodule "sources_non_forked/vim-snippets"]
+	path = sources_non_forked/vim-snippets
+	url = https://github.com/honza/vim-snippets
+[submodule "sources_non_forked/ultisnips"]
   path = sources_non_forked/ultisnips
   url = https://github.com/sirver/UltiSnips
-
-[submodule "YouCompleteMe"]
+[submodule "sources_non_forked/YouCompleteMe"]
   path = sources_non_forked/YouCompleteMe
   url = https://github.com/valloric/YouCompleteMe
-
-[submodule "supertab"]
+[submodule "sources_non_forked/supertab"]
   path = sources_non_forked/supertab
   url = https://github.com/ervandew/supertab
+[submodule "sources_non_forked/vim-hybrid"]
+	path = sources_non_forked/vim-hybrid
+	url = https://github.com/w0ng/vim-hybrid

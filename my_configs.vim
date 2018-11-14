@@ -226,6 +226,10 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
+" Activate vim-hybrid colorscheme
+set background=dark
+colorscheme hybrid
+
 " Add functionality for removing trailing whitespaces
 
 " Add Syntastic switch for python2 and python3
