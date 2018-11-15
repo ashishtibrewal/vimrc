@@ -1,39 +1,56 @@
 [submodule "sources_non_forked/auto-pairs"]
 	path = sources_non_forked/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs
+  ignore = dirty
 [submodule "sources_non_forked/gruvbox"]
 	path = sources_non_forked/gruvbox
 	url = https://github.com/morhetz/gruvbox
+  ignore = dirty
 [submodule "sources_non_forked/tagbar"]
 	path = sources_non_forked/tagbar
 	url = https://github.com/majutsushi/tagbar
+  ignore = dirty
 [submodule "sources_non_forked/vim-airline"]
 	path = sources_non_forked/vim-airline
 	url = https://github.com/vim-airline/vim-airline
+  ignore = dirty
 [submodule "sources_non_forked/vim-bufferline"]
 	path = sources_non_forked/vim-bufferline
 	url = https://github.com/bling/vim-bufferline
+  ignore = dirty
 [submodule "sources_non_forked/vim-gitgutter"]
 	path = sources_non_forked/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
+  ignore = dirty
 [submodule "sources_non_forked/vim-unimpaired"]
 	path = sources_non_forked/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired
+  ignore = dirty
 [submodule "sources_non_forked/vim-snippets"]
 	path = sources_non_forked/vim-snippets
 	url = https://github.com/honza/vim-snippets
+  ignore = dirty
 [submodule "sources_non_forked/ultisnips"]
   path = sources_non_forked/ultisnips
   url = https://github.com/sirver/UltiSnips
+  ignore = dirty
 [submodule "sources_non_forked/YouCompleteMe"]
   path = sources_non_forked/YouCompleteMe
   url = https://github.com/valloric/YouCompleteMe
+  ignore = dirty
 [submodule "sources_non_forked/supertab"]
   path = sources_non_forked/supertab
   url = https://github.com/ervandew/supertab
+  ignore = dirty
 [submodule "sources_non_forked/vim-hybrid"]
 	path = sources_non_forked/vim-hybrid
 	url = https://github.com/w0ng/vim-hybrid
+  ignore = dirty
 [submodule "sources_non_forked/vim-airline-themes"]
 	path = sources_non_forked/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
+  ignore = dirty
+[submodule "sources_non_forked/vim-snipmate"]
+	path = sources_non_forked/vim-snipmate
+	url = https://github.com/garbas/vim-snipmate
+  ignore = dirty
