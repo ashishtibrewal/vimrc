@@ -248,3 +248,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" ALE plugin settings
+let g:ale_sign_error = 'a>'
+let g:ale_sign_warning = 'a-'
+let g:airline#extensions#ale#enabled = 1

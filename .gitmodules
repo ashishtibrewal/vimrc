@@ -54,3 +54,6 @@
 	path = sources_non_forked/vim-snipmate
 	url = https://github.com/garbas/vim-snipmate
   ignore = dirty
+[submodule "sources_non_forked/ale"]
+	path = sources_non_forked/ale
+	url = https://github.com/w0rp/ale
