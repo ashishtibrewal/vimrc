@@ -160,7 +160,7 @@ set indentkeys-=0#
 " commented lines using the J keymap. Also remove t to prevent auto-wrapping
 " text using textwidth
 set formatoptions+=j
-set formatoptions-=t
+"set formatoptions-=t
 
 " Include alpha in the nrformat option for CTRL-A and CTRL-X to work with an
 " alphabetic index/list
@@ -214,22 +214,37 @@ vnoremap <silent> ? :<C-U>call RangeSearch('?')<CR>:if strlen(g:srchstr) > 0\|ex
 " Adds flexibility to visual block mode
 set virtualedit=block
 
-" To make YCM work with UtilSnips (and vim-snippets)
+" To make YCM work with UtilSnips (and vim-snippets, and supertab)
 " Refer to https://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme
 " Make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion=['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType='<C-n>'
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_min_num_of_chars_for_completion = 1
+let g:ycm_key_list_stop_completion = ['<C-y>', '<C-e>']
+" let g:ycm_semantic_triggers = {
+" 	\   'python': [ 're!\w+' ]
+" 	\ }
+" let g:ycm_show_diagnostics_ui = 0
 
 " Better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
+" Basic vim-snippets configurations
+let g:snips_author="Ashish Tibrewal"
+let g:snips_email="ashish.tibrewal@hotmail.com"
+let g:snips_github="https://github.com/ashishtibrewal"
+let g:tex_flavor = "latex"
+
 " Activate vim-hybrid colorscheme
 set background=dark
 colorscheme hybrid
 
-" Add functionality for removing trailing whitespaces
-
-" Add Syntastic switch for python2 and python3
+" Syntastic plugin settings
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
