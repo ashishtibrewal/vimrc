@@ -217,6 +217,9 @@ set virtualedit=block
 " To make YCM work with UtilSnips (and vim-snippets, and supertab)
 " Refer to https://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme
 " Make YCM compatible with UltiSnips (using supertab)
+" IMPORTANT NOTE: Need to set PYTHONPATH environment variable to the path of
+" site-packages so that YCM can find/index packages only available within that
+" environment
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
@@ -256,11 +259,13 @@ hi Visual ctermbg=105
 " let g:syntastic_mode_map = { 'mode': 'passive'}
 
 " ALE plugin settings
-let g:ale_sign_error = 'a>'
-let g:ale_sign_warning = 'a-'
+" let g:ale_sign_error = 'a>'
+" let g:ale_sign_warning = 'a-'
 let g:airline#extensions#ale#enabled = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_open_list = 1
+let g:ale_sign_column_always = 1
+let g:ale_list_window_size = 5
 " let g:ale_lint_on_enter = 0
 " let g:ale_fixers = {
 " \   '*': ['remove_trailing_lines', 'trim_whitespace'],
@@ -273,3 +278,11 @@ vnoremap // y/<C-R>"<CR>
 
 " Set spell check to always on
 set spell
+
+" Automatically close quickfix and location list buffers when closing the last buffer
+" Note that both quickfix and location list buffers/windows have buftype set to quickfix
+" Refer to https://stackoverflow.com/questions/7476126/how-to-automatically-close-the-quick-fix-window-when-leaving-a-file
+aug QFClose
+  au!
+  au WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&buftype") == "quickfix"|q|endif
+aug END
