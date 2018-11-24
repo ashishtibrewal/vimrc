@@ -217,11 +217,14 @@ set virtualedit=block
 " To make YCM work with UtilSnips (and vim-snippets, and supertab)
 " Refer to https://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme
 " Make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion=['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType='<C-n>'
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_min_num_of_chars_for_completion = 1
+let g:ycm_complete_in_comments = 1
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
+let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_key_list_stop_completion = ['<C-y>', '<C-e>']
 " let g:ycm_semantic_triggers = {
 " 	\   'python': [ 're!\w+' ]
@@ -239,17 +242,34 @@ let g:snips_email="ashish.tibrewal@hotmail.com"
 let g:snips_github="https://github.com/ashishtibrewal"
 let g:tex_flavor = "latex"
 
-" Activate vim-hybrid colorscheme
+" Activate vim-hybrid colorscheme (Also change colour for selected text as the
+" default one isn't clearly visible)
 set background=dark
 colorscheme hybrid
+hi Visual ctermbg=105
 
 " Syntastic plugin settings
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_mode_map = { 'mode': 'passive'}
 
 " ALE plugin settings
 let g:ale_sign_error = 'a>'
 let g:ale_sign_warning = 'a-'
 let g:airline#extensions#ale#enabled = 1
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_open_list = 1
+" let g:ale_lint_on_enter = 0
+" let g:ale_fixers = {
+" \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+" \   'python': ['autopep8']
+" \}
+" let g:ale_linters_explicit = 1
+
+" To search for visually selected text
+vnoremap // y/<C-R>"<CR>
+
+" Set spell check to always on
+set spell

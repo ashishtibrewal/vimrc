@@ -57,3 +57,8 @@
 [submodule "sources_non_forked/ale"]
 	path = sources_non_forked/ale
 	url = https://github.com/w0rp/ale
+  ignore = dirty
+[submodule "sources_non_forked/vimtex"]
+	path = sources_non_forked/vimtex
+	url = https://github.com/lervag/vimtex
+  ignore = dirty
