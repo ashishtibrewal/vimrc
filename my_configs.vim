@@ -129,6 +129,12 @@ set textwidth=80
 " the default spell check language is American English
 set spelllang=en_gb
 
+" Set spell check to always on
+set spell
+
+" Set spellfile to store custom words
+set spellfile=$HOME/.vim_runtime/en.utf-8.add
+
 " Set autochdir option to automatically change directory to which the currently
 " opened file/buffer belongs - Using autocmd instead as autochdir breaks
 " functionality with the bufferline plugin
@@ -275,9 +281,6 @@ let g:ale_list_window_size = 5
 
 " To search for visually selected text
 vnoremap // y/<C-R>"<CR>
-
-" Set spell check to always on
-set spell
 
 " Automatically close quickfix and location list buffers when closing the last buffer
 " Note that both quickfix and location list buffers/windows have buftype set to quickfix
