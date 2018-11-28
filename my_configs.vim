@@ -91,8 +91,12 @@ map <leader><right> gt
 " inline comments as Vim interprets the pipe character as a command termination.
 " To combine several commands that need to be run on a specific mapping we
 " either need to escape the | (pipe) using backslash (\) or use <bar> instead
-nmap <silent> <leader>ms :NERDTreeClose<CR>\|:mksession! ./.session.vim<CR>\|:NERDTree<CR>|    " Close NERDTree window, create session, (re)load NERDTree window 
-nmap <silent> <leader>ls :so ./.session.vim<CR>\|:NERDTree<CR>|    " Load NERDTree window after loading the session
+" Always start vim in project's base directory. The modification of path using
+" vimstartdir makes sure that the session file in created in the project's base
+" directory (and not in subdirectories where the current buffer is located)
+let vimstartdir = getcwd()
+nmap <silent> <leader>ms :NERDTreeClose<CR>\|:execute ":mksession! ".vimstartdir."/.session.vim"\|:NERDTree<CR>|    " Close NERDTree window, create session, (re)load NERDTree window 
+nmap <silent> <leader>ls :execute ":so ".vimstartdir."/.session.vim"\|:NERDTree<CR>|    " Load NERDTree window after loading the session
 set sessionoptions-=options
 
 " To be able to save/write (to) read-only files easily (To use this command,
